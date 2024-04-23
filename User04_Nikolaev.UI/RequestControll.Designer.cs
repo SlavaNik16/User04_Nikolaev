@@ -45,7 +45,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBoxMaster = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxZapchasti = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBoxOperator = new System.Windows.Forms.GroupBox();
             this.labelCompletedDate = new System.Windows.Forms.Label();
@@ -229,7 +229,7 @@
             // 
             // groupBoxMaster
             // 
-            this.groupBoxMaster.Controls.Add(this.textBox1);
+            this.groupBoxMaster.Controls.Add(this.textBoxZapchasti);
             this.groupBoxMaster.Controls.Add(this.label11);
             this.groupBoxMaster.Location = new System.Drawing.Point(24, 731);
             this.groupBoxMaster.Name = "groupBoxMaster";
@@ -238,13 +238,13 @@
             this.groupBoxMaster.TabStop = false;
             this.groupBoxMaster.Text = "Данные для мастера";
             // 
-            // textBox1
+            // textBoxZapchasti
             // 
-            this.textBox1.Location = new System.Drawing.Point(315, 25);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(402, 91);
-            this.textBox1.TabIndex = 10;
+            this.textBoxZapchasti.Location = new System.Drawing.Point(315, 25);
+            this.textBoxZapchasti.Multiline = true;
+            this.textBoxZapchasti.Name = "textBoxZapchasti";
+            this.textBoxZapchasti.Size = new System.Drawing.Size(402, 91);
+            this.textBoxZapchasti.TabIndex = 10;
             // 
             // label11
             // 
@@ -382,7 +382,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBoxMaster;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxZapchasti;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBoxOperator;
         private System.Windows.Forms.Label labelCompletedDate;

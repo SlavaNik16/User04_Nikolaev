@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -27,29 +28,33 @@ namespace User04_Nikolaev.UI
             using (var db = new RepairServiceContext())
             {
                 List<Request> requests;
-                switch (CurrentUser.User.RoleId)
+                var user = CurrentUser.User;
+                buttonAdd.Enabled = false;
+                switch (user.RoleId)
                 {
                     case 1:
                         labelUser.Text = "Окно клиента";
-                        requests = db.Requests.Where(x => x.ClientId == CurrentUser.User.Id).ToList();
+                        requests = db.Requests.Where(x => x.ClientId == user.Id).ToList();
+                        buttonAdd.Enabled = true;
                         break;
                     case 2:
                         labelUser.Text = "Окно мастера";
-                        requests = db.Requests.Where(x => x.Id == 2).ToList();
+                        requests = db.Requests.Where(x => x.WorkerId == user.Id).ToList();
                         break;
                     case 3:
                         labelUser.Text = "Окно оператора";
+                        requests = db.Requests.ToList();
                         break;
-                    case 4:
+                    default:
                         labelUser.Text = "Окно менеджера";
+                        requests = db.Requests.ToList();
                         break;
                 }
-                requests = db.Requests
-                    .ToList();
                 foreach(var request in requests)
                 {
                     AddView(request);
                 }
+                UpdateStatic();
             }
         }
 
@@ -74,7 +79,39 @@ namespace User04_Nikolaev.UI
         private void AddView(Request request)
         {
             var requestView = new RequestControll(request);
+            requestView.onUpdateStatus += RequestView_onUpdateStatus;
             requestView.Parent = flowLayoutPanel1;
         }
+
+        private void RequestView_onUpdateStatus()
+        {
+            UpdateStatic();
+        }
+        private void UpdateStatic()
+        {
+            var countStatus = 0;
+            var avgTime = 0d;
+            var count = 0;
+            foreach (var item in flowLayoutPanel1.Controls)
+            {
+                if (item is RequestControll requestControll)
+                {
+                    count++;
+                    var request = requestControll.Request;
+                    if (request.StatusId == 3)
+                    {
+                        countStatus++;
+                    }
+                    if (request.CompletionDate != null)
+                    {
+                        TimeSpan ts = ((DateTime)request.CompletionDate).Subtract(request.CreatedAt);
+                        avgTime += ts.TotalSeconds;
+                        labelTimeAvg.Text = (avgTime / count).ToString();
+                    }
+                }
+            }
+            labelCountStatusEnd.Text = countStatus.ToString();
+        }
     }
+
 }
