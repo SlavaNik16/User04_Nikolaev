@@ -96,7 +96,7 @@ namespace User04_Nikolaev.UI
                             comboBoxStatus.SelectedItem = comboBoxStatus.Items.Cast<Status>().FirstOrDefault(x => x.Id == request.StatusId);
                         }
                     }
-                    if (request.StatusId == 3)
+                    if (request.StatusId == 3 && request.CompletionDate==null)
                     {
                         request.CompletionDate = DateTime.Now;
                         labelCompletedDate.Text = request.CompletionDate?.ToString("dd-MM-yyyy");
@@ -112,6 +112,11 @@ namespace User04_Nikolaev.UI
                     onUpdateStatus?.Invoke();
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -55,6 +55,8 @@
             this.comboBoxStatus = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBoxClient.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBoxMaster.SuspendLayout();
@@ -230,6 +232,7 @@
             // groupBoxMaster
             // 
             this.groupBoxMaster.Controls.Add(this.textBoxZapchasti);
+            this.groupBoxMaster.Controls.Add(this.button1);
             this.groupBoxMaster.Controls.Add(this.label11);
             this.groupBoxMaster.Location = new System.Drawing.Point(24, 731);
             this.groupBoxMaster.Name = "groupBoxMaster";
@@ -331,7 +334,7 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(277, 1192);
+            this.buttonSave.Location = new System.Drawing.Point(24, 1190);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(281, 46);
             this.buttonSave.TabIndex = 16;
@@ -339,11 +342,31 @@
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(23, 79);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(212, 46);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Добавить комментарий";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(586, 1190);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(212, 46);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "Комментарии";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // RequestControll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.groupBoxOperator);
             this.Controls.Add(this.groupBoxMaster);
@@ -392,5 +415,7 @@
         private System.Windows.Forms.ComboBox comboBoxStatus;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
