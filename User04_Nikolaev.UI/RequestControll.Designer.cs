@@ -46,6 +46,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.groupBoxMaster = new System.Windows.Forms.GroupBox();
             this.textBoxZapchasti = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBoxOperator = new System.Windows.Forms.GroupBox();
             this.labelCompletedDate = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@
             this.comboBoxStatus = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBoxClient.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -249,6 +249,16 @@
             this.textBoxZapchasti.Size = new System.Drawing.Size(402, 91);
             this.textBoxZapchasti.TabIndex = 10;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(23, 79);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(212, 46);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Добавить комментарий";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -342,16 +352,6 @@
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(23, 79);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(212, 46);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Добавить комментарий";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(586, 1190);
@@ -360,6 +360,7 @@
             this.button2.TabIndex = 18;
             this.button2.Text = "Комментарии";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // RequestControll
             // 

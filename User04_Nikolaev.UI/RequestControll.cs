@@ -5,12 +5,14 @@ using System.Data;
 using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using User04_Nikolaev.Context;
 using User04_Nikolaev.Context.Currentuser;
 using User04_Nikolaev.Context.Models;
+using User04_Nikolaev.UI.Forms;
 
 namespace User04_Nikolaev.UI
 {
@@ -116,7 +118,27 @@ namespace User04_Nikolaev.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            var form = new AddCommentForm();
+            if(form.ShowDialog() == DialogResult.OK)
+            {
+                var message = new Comment()
+                {
+                    Message = form.Message,
+                    WorkerId = CurrentUser.User.Id,
+                    RequestId = Request.Id,
+                };
+                using (var db = new RepairServiceContext())
+                {
+                    db.Comments.Add(message);
+                    db.SaveChanges();
+                }
+            }
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var form = new CommentsView(Request);
+            form.ShowDialog();
         }
     }
 }

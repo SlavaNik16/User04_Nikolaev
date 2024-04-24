@@ -68,6 +68,12 @@
     <Compile Include="Forms\AuthForm.Designer.cs">
       <DependentUpon>AuthForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CommentsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CommentsView.Designer.cs">
+      <DependentUpon>CommentsView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,8 +88,14 @@
     <Compile Include="RequestControll.Designer.cs">
       <DependentUpon>RequestControll.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\AddCommentForm.resx">
+      <DependentUpon>AddCommentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AuthForm.resx">
       <DependentUpon>AuthForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CommentsView.resx">
+      <DependentUpon>CommentsView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
